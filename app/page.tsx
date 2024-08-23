@@ -1,3 +1,9 @@
+import Link from "next/link";
+
 export default function Home() {
-  return <main>hello world</main>;
+  return (
+    <main>
+      <Link href="/">hellow</Link>
+    </main>
+  );
 }
