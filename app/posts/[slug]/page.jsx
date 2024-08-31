@@ -1,7 +1,7 @@
 import Menu from "@/components/Menu/Menu";
 import styles from "./singlePage.module.css";
 import Image from "next/image";
-// import Comments from "@/components/comments/Comments";
+import Comments from "@/components/comments/Comments";
 
 const getData = async (slug) => {
   const res = await fetch(`http://192.168.55.150:3000/api/posts/${slug}`, {
@@ -50,7 +50,7 @@ const SinglePage = async ({ params }) => {
             dangerouslySetInnerHTML={{ __html: data?.desc }}
           />
           <div className={styles.comment}>
-            {/* <Comments postSlug={slug}/> */}
+            <Comments postSlug={slug}/>
           </div>
         </div>
         <Menu />
