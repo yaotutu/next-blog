@@ -2,6 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    flex: 1;
   }
   
   .select{
@@ -14,7 +15,7 @@
   .editor {
     display: flex;
     gap: 20px;
-    height: 500px;
+    /* height: 500px; */
     position: relative;
     width: 100%;
   }
@@ -47,8 +48,8 @@
   }
   
   .input{
-    padding: 50px;
-    font-size: 64px;
+    padding: 20px;
+    font-size: 30px;
     border: none;
     outline: none;
     background-color: transparent;
