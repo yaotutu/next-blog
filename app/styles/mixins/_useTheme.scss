@@ -1,15 +1,9 @@
 @use "../base/variables";
 
-@mixin useTheme($theme) {
-  @if map-has-key($theme, "color") {
-    color: map-get($theme, "color");
-  }
-
-  @if map-has-key($theme, "background") {
-    background: map-get($theme, "background");
-  }
-
-  @if map-has-key($theme, "border") {
-    border: map-get($theme, "border");
+@mixin useTheme() {
+  @each $key, $value in $themes {
+    html[data-theme="#{$key}"] & {
+      @content;
+    }
   }
 }
