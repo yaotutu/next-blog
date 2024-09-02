@@ -1,0 +1,51 @@
+/**
+ * Mixin: respond-to
+ * 
+ * 描述:
+ * 此mixin用于根据预定义的断点创建媒体查询。
+ * 它接受一个断点作为参数，并生成相应的媒体查询。
+ * 如果断点是一个列表，则生成一个具有最小和最大宽度的媒体查询。
+ * 如果断点是一个单个值，则生成一个具有最小宽度的媒体查询。
+ * 使用@content指令包含媒体查询内的内容。
+ * 
+ * 参数:
+ * - $breakpoint: 要为其生成媒体查询的断点名称。
+ * 
+ * 用法:
+ * @include respond-to('phone') {
+ *   // 手机断点的样式
+ * }
+ * 
+ * @include respond-to('laptop') {
+ *   // 笔记本电脑断点的样式
+ * }
+ */
+// 断点映射
+$breakpoints: (
+  "phone": (
+    481px,
+    768px,
+  ),
+  "pad": (
+    769px,
+    1024px,
+  ),
+  "laptop": (
+    1025px,
+    1280px,
+  ),
+  "desktop": 1281px,
+);
+
+@mixin respond-to($breakpoint) {
+  $bp: map-get($breakpoints, $breakpoint);
+  @if type-of($bp) == "list" {
+    @media screen and (min-width: nth($bp, 1)) and (max-width: nth($bp, 2)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $bp) {
+      @content;
+    }
+  }
+}

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.scss";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/providers/ThemeProvider";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import AuthProvider from "@/providers/AuthProvider";
-
+import "./styles/main.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
