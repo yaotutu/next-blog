@@ -27,6 +27,24 @@ module.exports = {
           dark: "#a6a6a6", // 暗模式软文本色
         },
       },
+      maxWidth: {
+        "wrapper-lg": "1366px", // 大屏幕宽度
+        "wrapper-md": "1024px", // 中屏幕宽度
+        "wrapper-sm": "768px", // 小屏幕宽度
+        "wrapper-xs": "640px", // 更小屏幕宽度
+        "wrapper-xxs": "475px", // 最小屏幕宽度
+      },
+      padding: {
+        base: "80px",
+        md: "40px",
+      },
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
   },
   plugins: [],

@@ -23,12 +23,13 @@ export default function RootLayout({
           <ThemeContextProvider>
             <ThemeProvider>
               <div
-                className={`light:bg-bg-light light:text-textColor-light min-h-screen bg-bg text-textColor
-                  dark:bg-bg-dark dark:text-textColor-dark`}
+                className="light:bg-bg-light light:text-textColor-light min-h-screen bg-bg text-textColor
+                  dark:bg-bg-dark dark:text-textColor-dark"
               >
                 <div
-                  className="mx-auto flex min-h-screen max-w-screen-xl flex-col px-20 sm:max-w-[475px]
-                    md:max-w-[640px] lg:max-w-[768px] lg:px-10 xl:max-w-[1024px] 2xl:max-w-[1366px]"
+                  className="mx-auto flex min-h-screen flex-col max-w-full 2xl:max-w-wrapper-lg
+                    xl:max-w-wrapper-md lg:max-w-wrapper-sm md:max-w-wrapper-xs sm:max-w-wrapper-xxs
+                    px-base md:px-md"
                 >
                   <Navbar />
                   {children}
