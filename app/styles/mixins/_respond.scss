@@ -22,11 +22,14 @@
  */
 // 断点映射
 $breakpoints: (
-  "phone": (
-    481px,
-    768px,
-  ),
-  "pad": (
+  "mobile": 640px,
+  // 覆盖所有小于640px的设备
+  "small-tablet":
+    (
+      641px,
+      768px,
+    ),
+  "tablet": (
     769px,
     1024px,
   ),
@@ -43,8 +46,9 @@ $breakpoints: (
     @media screen and (min-width: nth($bp, 1)) and (max-width: nth($bp, 2)) {
       @content;
     }
-  } @else {
-    @media screen and (min-width: $bp) {
+  } @else if type-of($bp) == "number" {
+    @media screen and (max-width: $bp) {
+      // 用 max-width 确保 mobile 覆盖所有小于 640px 的设备
       @content;
     }
   }
