@@ -1,0 +1,109 @@
+/**
+ * 
+ * This file contains global styles and variables for the application.
+ * 
+ * Variables:
+ * - --bg: The background color of the page.
+ * - --textColor: The text color of the page.
+ * - --softBg: A softer background color used for certain elements.
+ * - --softTextColor: A softer text color used for certain elements.
+ * 
+ * Selectors:
+ * - *: Applies box-sizing and resets padding and margin to 0 for all elements.
+ * - body: Sets the maximum width of the body to 100vw and hides horizontal overflow.
+ * - a: Sets the color and text decoration of links to inherit from the parent element.
+ * - .dark: Overrides the variables to use dark color scheme.
+ * - .light: Overrides the variables to use light color scheme.
+ * - .container: Sets the minimum height, background color, and text color of the container element.
+ * - .wrapper: Sets the maximum width, margins, padding, minimum height, and flex properties of the wrapper element.
+ * 
+ * Mixins:
+ * - mixins.respond-to("desktop"): Applies responsive styles for desktop screens.
+ * - mixins.respond-to("laptop"): Applies responsive styles for laptop screens.
+ * - mixins.respond-to("tablet"): Applies responsive styles for tablet screens.
+ * - mixins.respond-to("small-tablet"): Applies responsive styles for small tablet screens.
+ * - mixins.respond-to("mobile"): Applies responsive styles for mobile screens.
+ */
+@use "../mixins.scss" as mixins;
+:root {
+  --bg: white;
+  --textColor: black;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dark {
+  --bg: #0f172a;
+  --textColor: #ddd;
+  --softBg: #1f273a;
+  --softTextColor: #a6a6a6;
+}
+
+.light {
+  --bg: white;
+  --textColor: black;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--textColor);
+}
+
+.wrapper {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@include mixins.respond-to("desktop") {
+  .wrapper {
+    max-width: 1366px;
+  }
+}
+@include mixins.respond-to("laptop") {
+  .wrapper {
+    max-width: 1024px;
+  }
+}
+@include mixins.respond-to("tablet") {
+  .wrapper {
+    max-width: 768px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@include mixins.respond-to("small-tablet") {
+  .wrapper {
+    max-width: 640px;
+  }
+}
+
+@include mixins.respond-to("mobile") {
+  .wrapper {
+    max-width: 475px;
+  }
+}
