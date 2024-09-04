@@ -1,3 +1,29 @@
+/**
+ * 
+ * This file contains global styles and variables for the application.
+ * 
+ * Variables:
+ * - --bg: The background color of the page.
+ * - --textColor: The text color of the page.
+ * - --softBg: A softer background color used for certain elements.
+ * - --softTextColor: A softer text color used for certain elements.
+ * 
+ * Selectors:
+ * - *: Applies box-sizing and resets padding and margin to 0 for all elements.
+ * - body: Sets the maximum width of the body to 100vw and hides horizontal overflow.
+ * - a: Sets the color and text decoration of links to inherit from the parent element.
+ * - .dark: Overrides the variables to use dark color scheme.
+ * - .light: Overrides the variables to use light color scheme.
+ * - .container: Sets the minimum height, background color, and text color of the container element.
+ * - .wrapper: Sets the maximum width, margins, padding, minimum height, and flex properties of the wrapper element.
+ * 
+ * Mixins:
+ * - mixins.respond-to("desktop"): Applies responsive styles for desktop screens.
+ * - mixins.respond-to("laptop"): Applies responsive styles for laptop screens.
+ * - mixins.respond-to("tablet"): Applies responsive styles for tablet screens.
+ * - mixins.respond-to("small-tablet"): Applies responsive styles for small tablet screens.
+ * - mixins.respond-to("mobile"): Applies responsive styles for mobile screens.
+ */
 @use "../mixins.scss" as mixins;
 :root {
   --bg: white;
