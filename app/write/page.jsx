@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./writePage.module.css";
+import styles from "./writePage.module.scss";
 import { useEffect, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
@@ -67,14 +67,6 @@ const WritePage = () => {
         className={styles.input}
         onChange={(e) => setTitle(e.target.value)}
       />
-      {/* <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
-        <option value="style">style</option>
-        <option value="fashion">fashion</option>
-        <option value="food">food</option>
-        <option value="culture">culture</option>
-        <option value="travel">travel</option>
-        <option value="coding">coding</option>
-      </select> */}
       <div className={styles.editor}>
             <MdEditor renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
       </div>

@@ -6,7 +6,7 @@ import Card from "../card/Card";
 
 const getData = async (page, cat) => {
   const res = await fetch(
-    `http://127.0.0.1:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    `http://192.168.55.160:3000/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }
